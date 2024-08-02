@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoodDelivery.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MenuItemController : ControllerBase
     {
@@ -17,9 +17,10 @@ namespace FoodDelivery.Server.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<MenuItem> Get()
+        public JsonResult Get()
         {
-            return context.MenuItem.ToList();
+             
+            return new JsonResult( context.MenuItem.ToList());
             
         }
     }

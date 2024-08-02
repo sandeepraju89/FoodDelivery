@@ -1,5 +1,6 @@
 ﻿namespace FoodDelivery.Server.Models
 {
+    
     public class MenuItem
     {
         public int Id { get; set; }
