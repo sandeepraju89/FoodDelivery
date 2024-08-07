@@ -10,7 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<FoodDeliveryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FoodDeliveryConnectionString")));
+builder.Services.AddDbContext<FoodDeliveryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FoodDeliveryConnectionString"))
+.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+builder.Services.AddDbContext<OrdersDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FoodDeliveryConnectionString")));
 var app = builder.Build();
 
 app.UseDefaultFiles();

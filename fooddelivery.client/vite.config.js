@@ -51,6 +51,11 @@ export default defineConfig({
             {
                 target,
                 secure: false
+            },
+            '/order':
+            {
+                target,
+                secure: false
             }
 
         },

@@ -9,12 +9,10 @@ function Menu() {
     }, []);
 
     const result = menuItems === undefined ? <p>No items available, please refresh</p> :
-        <ul id="menu ">{menuItems.map(item => <MenuItem key={item.id} meal={item }/>)}</ul>
+        <ul id="menu">{menuItems.map(item => <MenuItem key={item.id} meal={item }/>)}</ul>
     async function populateMenu() {
-        const response = await fetch('menuItem');
-        //const body = await response.text()
-        const data = await response.json();
-        //console.log(body);
+        const response = await fetch('menuItem');        
+        const data = await response.json();        
         setMenuItems(data);
     }
     return (

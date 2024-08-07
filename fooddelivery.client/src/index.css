@@ -37,6 +37,12 @@
     object-fit: cover;
 }
 
+#cart {
+    list-style: none;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: grid;
+}
 a {
   font-weight: 500;
   color: #646cff;
